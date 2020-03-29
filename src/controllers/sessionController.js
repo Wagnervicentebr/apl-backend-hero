@@ -4,7 +4,7 @@ const connection = require('../database/connection');
 module.exports = {
     async createSession(req,res) {
 
-        const id_ongs = req.headers.authorization;
+        const {id_ongs} = req.body;
 
         const ong = await connection('ongs')
             .where('id', id_ongs)
